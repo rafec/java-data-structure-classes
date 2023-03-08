@@ -29,5 +29,25 @@ public class Stack {
 		return nodeRefStackEntry == null ? true : false;
 	}
 	
+	@Override
+	public String toString() {
+		String returnString = "-------------\n";
+		returnString += "    Stack\n";
+		returnString += "-------------\n";
+		
+		Node auxiliaryNode = nodeRefStackEntry;
+		
+		while (true) {
+			if(auxiliaryNode != null) {
+				returnString += "[Node{data=" + auxiliaryNode.getData() + "}]\n";
+				auxiliaryNode = auxiliaryNode.getNodeRef();
+			} else {
+				break;
+			}
+		}
+		
+		returnString += "=============\n";
+		return returnString;
+	}
 	
 }
