@@ -7,12 +7,13 @@ public class Queue {
 		this.entryNodeRef = null;
 	}
 	
-	public void enqueue(Node newNode) {
+	public void enqueue(Object obj) {
+		Node newNode = new Node(obj); 
 		newNode.setNodeRef(entryNodeRef);
 		entryNodeRef = newNode;
 	}
 	
-	public Node first() {
+	public Object first() {
 		if (!this.isEmpty()) {
 			Node firstNode = entryNodeRef;
 			
@@ -23,12 +24,12 @@ public class Queue {
 					break;
 				}
 			}
-			return firstNode;
+			return firstNode.getObject();
 		}
 		return null;
 	}
 	
-	public Node dequeue() {
+	public Object dequeue() {
 		if (!this.isEmpty()) {
 			Node firstNode = entryNodeRef;
 			Node auxNode = entryNodeRef;
@@ -42,7 +43,7 @@ public class Queue {
 					break;
 				}
 			}
-			return firstNode;
+			return firstNode.getObject();
 		}
 		return null;
 	}
