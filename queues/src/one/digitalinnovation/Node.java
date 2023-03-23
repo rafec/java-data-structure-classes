@@ -1,13 +1,13 @@
 package one.digitalinnovation;
 
-public class Node {
-	private Object object;
-	private Node nodeRef;
+public class Node<T> {
+	private T object;
+	private Node<T> nodeRef;
 	
-	Node() {
+	public Node() {
 	}
 	
-	Node(Object object) {
+	public Node(T object) {
 		this.nodeRef = null;
 		this.object = object;
 	}
@@ -16,7 +16,7 @@ public class Node {
 		return object;
 	}
 
-	public void setObject(Object object) {
+	public void setObject(T object) {
 		this.object = object;
 	}
 

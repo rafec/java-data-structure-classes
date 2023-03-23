@@ -1,19 +1,19 @@
 package one.digitalinnovation;
 
-public class Queue {
-	private Node entryNodeRef;
+public class Queue<T> {
+	private Node<T> entryNodeRef;
 	
 	public Queue() {
 		this.entryNodeRef = null;
 	}
 	
-	public void enqueue(Object obj) {
+	public void enqueue(T obj) {
 		Node newNode = new Node(obj); 
 		newNode.setNodeRef(entryNodeRef);
 		entryNodeRef = newNode;
 	}
 	
-	public Object first() {
+	public T first() {
 		if (!this.isEmpty()) {
 			Node firstNode = entryNodeRef;
 			
@@ -24,12 +24,12 @@ public class Queue {
 					break;
 				}
 			}
-			return firstNode.getObject();
+			return (T) firstNode.getObject();
 		}
 		return null;
 	}
 	
-	public Object dequeue() {
+	public T dequeue() {
 		if (!this.isEmpty()) {
 			Node firstNode = entryNodeRef;
 			Node auxNode = entryNodeRef;
@@ -43,7 +43,7 @@ public class Queue {
 					break;
 				}
 			}
-			return firstNode.getObject();
+			return (T) firstNode.getObject();
 		}
 		return null;
 	}
