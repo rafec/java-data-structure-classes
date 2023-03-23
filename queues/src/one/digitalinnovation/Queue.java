@@ -23,6 +23,7 @@ public class Queue {
 					break;
 				}
 			}
+			return firstNode;
 		}
 		return null;
 	}
@@ -57,7 +58,7 @@ public class Queue {
 		
 		if (entryNodeRef != null) {
 			while (true) {
-				returnString += "[Node{object=" + auxNode.getObject() + "}] --->";
+				returnString += "[Node{object=" + auxNode.getObject() + "}]--->";
 				
 				if (auxNode.getNodeRef() != null) {
 					auxNode = auxNode.getNodeRef();
