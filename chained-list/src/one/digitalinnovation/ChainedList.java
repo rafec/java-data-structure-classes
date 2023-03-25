@@ -35,7 +35,7 @@ public class ChainedList<T> {
 		Node<T> auxNode = entryReference;
 		Node<T> returnNode = null;
 		
-		for(int i = 0; i < this.size()-1; i++) {
+		for(int i = 0; i <= index; i++) {
 			returnNode = auxNode;
 			auxNode = auxNode.getNextNode();
 		}
@@ -89,7 +89,7 @@ public class ChainedList<T> {
 		String returnStr = "";
 		Node<T> auxNode = entryReference;
 		for (int i = 0; i < this.size(); i++) {
-			returnStr += "ChainedList [Node{content=" + auxNode.getContent() + "}--->";
+			returnStr += "[Node{content=" + auxNode.getContent() + "}--->";
 			auxNode = auxNode.getNextNode();
 		}
 		returnStr += "null";
