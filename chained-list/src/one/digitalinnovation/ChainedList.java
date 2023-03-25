@@ -42,6 +42,17 @@ public class ChainedList<T> {
 		return returnNode;
 	}
 	
+	public T remove(int index) {
+		Node<T> pivotNode = this.getNode(index);
+		if (index == 0) {
+			entryReference = pivotNode.getNextNode();
+			return pivotNode.getContent();
+		}
+		Node<T> previousNode = getNode(index-1);
+		previousNode.setNextNode(pivotNode.getNextNode());
+		return pivotNode.getContent();
+	}
+	
 	public int size() {
 		int listLength = 0;
 		
