@@ -25,6 +25,19 @@ public class ChainedList<T> {
 		auxNode.setNextNode(newNode);
 	}
 	
+	private Node<T> getNode(int index) {
+		indexValidate(index);
+		
+		Node<T> auxNode = entryReference;
+		Node<T> returnNode = null;
+		
+		for(int i = 0; i < this.size()-1; i++) {
+			returnNode = auxNode;
+			auxNode = auxNode.getNextNode();
+		}
+		return returnNode;
+	}
+	
 	public int size() {
 		int listLength = 0;
 		
@@ -43,6 +56,13 @@ public class ChainedList<T> {
 		}
 		
 		return listLength;
+	}
+	
+	private void indexValidate(int index) {
+		if (index >= size()) {
+			int lastIndex = size()-1;
+			throw new IndexOutOfBoundsException("There is no content in index " + " of this list! This list only goes up to index " + lastIndex + ".");
+		}
 	}
 	
 	public boolean isEmpty() {
