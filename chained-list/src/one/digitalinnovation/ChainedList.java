@@ -83,4 +83,16 @@ public class ChainedList<T> {
 	public boolean isEmpty() {
 		return entryReference == null ? true : false;
 	}
+
+	@Override
+	public String toString() {
+		String returnStr = "";
+		Node<T> auxNode = entryReference;
+		for (int i = 0; i < this.size(); i++) {
+			returnStr += "ChainedList [Node{content=" + auxNode.getContent() + "}--->";
+			auxNode = auxNode.getNextNode();
+		}
+		returnStr += "null";
+		return returnStr;
+	}
 }
