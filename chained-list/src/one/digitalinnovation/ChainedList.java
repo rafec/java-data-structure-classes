@@ -25,6 +25,10 @@ public class ChainedList<T> {
 		auxNode.setNextNode(newNode);
 	}
 	
+	public T get(int index) {
+		return getNode(index).getContent();
+	}
+	
 	private Node<T> getNode(int index) {
 		indexValidate(index);
 		
